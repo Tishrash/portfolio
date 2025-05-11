@@ -351,58 +351,62 @@
     </div>
    </section>
 
-   <!-- contact section -->
-   <section id="contact" class="contact">
-    <div class="main-text scroll-scale">
-        <span>ask me question</span>
-        <h2>Contact Me!</h2>
+  <!-- contact section -->
+<section id="contact" class="contact">
+  <div class="main-text scroll-scale">
+    <span>ask me question</span>
+    <h2>Contact Me!</h2>
+  </div>
+
+  <form name="submit-to-google-sheet" action="#" class="scroll-bottom">
+    <div class="input-box">
+      <input type="text" name="fullName" placeholder="Full Name" required>
+      <input type="email" name="email" placeholder="Email Address" required>
     </div>
+    <div class="input-box">
+      <input type="number" name="mobile" placeholder="Mobile Number" required>
+      <input type="text" name="subject" placeholder="Email Subject" required>
+    </div>
+    <textarea name="message" cols="30" rows="10" placeholder="Your Message" required></textarea>
+    <div class="btn-box formBtn">
+      <button type="submit" class="btn">Send Message</button>
+    </div>
+  </form>
 
-    <form name= "submit-to-google-sheet" action="#" class="scroll-bottom">
-        <div class="input-box">
-            <input type="text" name="Name" placeholder="Full Name" required>
-            <input type="email" name="Email" placeholder="Email Address" required>
-        </div>
-        <div class="input-box">
-            <input type="number" name="Num" placeholder="Mobile Number" required>
-            <input type="text" name="subject" placeholder="Email Subject" required>
-        </div>
-        <textarea name="Message" id="" cols="30" rows="10" placeholder="Your Message"></textarea>
-        <div class="btn-box formBtn">
-            <button type="submit" class="btn">Send Message</button>
-        </div>
-        
-    </form>
-    <span id="msg"></span>
-   </section>
+  <span id="msg"></span>
+</section>
 
-    <!-- footer design -->
-    <footer>
-            <P class="scroll-scale">Copyright &copy; 2025 by M.G.T Rashmika || All Right Reservd.</P>
-            <a href="#home"><i class='bx bx-up-arrow-alt' ></i></a>
-       </footer>
+<!-- footer design -->
+<footer>
+  <p class="scroll-scale">Copyright &copy; 2025 by M.G.T Rashmika || All Rights Reserved.</p>
+  <a href="#home"><i class='bx bx-up-arrow-alt'></i></a>
+</footer>
 
+<script src="mixitup.min.js"></script>
+<script src="script.js"></script>
 
-     <script src="mixitup.min.js"></script>
-    <script src="script.js"></script>
+<script>
+  const scriptURL = 'https://script.google.com/macros/s/AKfycbztcAwPuYdPKNIPTz-JhsTnUkuLLXi712DMHM5x1s6zq0xnMr5kQ9Uf9XNEJHlBt5SA/exec';
+  const form = document.forms['submit-to-google-sheet'];
+  const msg = document.getElementById("msg");
 
-    <script>
-        const scriptURL = 'https://script.google.com/macros/s/AKfycbztcAwPuYdPKNIPTz-JhsTnUkuLLXi712DMHM5x1s6zq0xnMr5kQ9Uf9XNEJHlBt5SA/exec'
-        const form = document.forms['submit-to-google-sheet']
-        const msg = document.getElementById("msg")
-      
-        form.addEventListener('submit', e => {
-          e.preventDefault()
-          fetch(scriptURL, { method: 'POST', body: new FormData(form)})
-            .then(response => {
-                msg.innerHTML = "Message sent successfully"
-                setTimeout(function(){
-                    msg.innerHTML = ""
-                },5000)
-                form.reset()
-            })
-            .catch(error => console.error('Error!', error.message))
-        })
-      </script>
+  form.addEventListener('submit', e => {
+    e.preventDefault();
+    fetch(scriptURL, { method: 'POST', body: new FormData(form) })
+      .then(response => {
+        msg.innerHTML = "✅ Message sent successfully!";
+        msg.style.color = "green";
+        setTimeout(() => {
+          msg.innerHTML = "";
+        }, 5000);
+        form.reset();
+      })
+      .catch(error => {
+        console.error('Error!', error.message);
+        msg.innerHTML = "❌ Failed to send message!";
+        msg.style.color = "red";
+      });
+  });
+</script>
 </body>
 </html>
