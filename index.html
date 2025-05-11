@@ -7,62 +7,49 @@
     <link rel="stylesheet" href="style.css">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css'      rel='stylesheet'>
 </head>
-<body>
+<body style="margin:0; padding:0; font-family:'Segoe UI', sans-serif; background-color:#0f172a; color:white; overflow-x:hidden;">
 
-    <!-- header site -->
-    <header>
-        <div class="logo"><span>Tishan</span>Rashmika</div>
-        <ul class="navlist">
-            <li><a href="#home" style="--i:1;">Home</a></li>
-            <li><a href="#about"style="--i:2;">About</a></li>
-            <li><a href="#skills"style="--i:3;">Skills</a></li>
-            <li><a href="#portfolio"style="--i:4;">Portfolio</a></li>
-            <li><a href="#contact"style="--i:5;">Contact</a></li>
-        </ul>
-        <div id="menu-icon" class="bx bx-menu"></div>
-    </header>
+  <section id="home" style="display:flex; flex-wrap:wrap; justify-content:space-between; align-items:center; padding:60px 10%; min-height:100vh;">
+    
+    <!-- Left Content -->
+    <div style="max-width:600px;">
+      <h1 style="font-size:2.5rem; margin-bottom:10px; color:#12f7ff;">Hi! I'm Tishan Rashmika</h1>
 
-  <!-- Home Section -->
-  <section id="home" class="home">
-    <div class="home-content scroll-scale">
-      <h1>Hi! I'm Tishan Rashmika</h1>
-      <div class="change-text">
-        <h3>And I'm</h3>
-        <h3><span class="word">Quality Assurance Engineer</span></h3>
+      <div style="margin-bottom:10px;">
+        <h3 style="font-size:1.8rem; color:#ffffff;">And I'm</h3>
+        <h3><span style="color:#12f7ff; font-weight:bold;">Quality Assurance Engineer</span></h3>
       </div>
-      <p>
-        BSc (Hons) Special in Information Technology at SLIIT | QA Engineer |
-        Focused on ensuring quality through automated testing, performance optimization,
-        and delivering seamless user experiences across frontend and backend systems.
+
+      <p style="margin:20px 0; line-height:1.6; font-size:1rem; color:#cbd5e1;">
+        BSc (Hons) Special in Information Technology at SLIIT | QA Engineer | Focused on ensuring quality through automated testing, performance optimization, and delivering seamless user experiences across frontend and backend systems.
       </p>
 
-      <div class="info-box">
-        <div class="email-info">
-          <h5>Email :</h5>
-          <span>tishanrashmikamg@gmail.com</span>
-        </div>
+      <div style="margin:20px 0;">
+        <h5 style="font-size:1rem; color:#94a3b8;">Email :</h5>
+        <span style="font-size:1rem; color:#ffffff;">tishanrashmikamg@gmail.com</span>
       </div>
 
-      <div class="btn-box">
-        <a href="img/Tishanrashmika.pdf" download class="btn">Download CV</a>
+      <div style="margin-top:20px;">
+        <a href="img/Tishanrashmika.pdf" download style="display:inline-block; padding:12px 25px; background-color:#12f7ff; color:#0f172a; border-radius:6px; font-weight:bold; text-decoration:none; transition:0.3s;">Download CV</a>
       </div>
 
-      <div class="social-icons">
-        <a href="https://www.linkedin.com/in/tishan-rashmika/"><i class='bx bxl-linkedin'></i></a>
-        <a href="https://www.instagram.com/tish_rash/"><i class='bx bxl-instagram'></i></a>
-        <a href="https://wa.me/94716367106"><i class='bx bxl-whatsapp'></i></a>
-        <a href="https://www.facebook.com/tishrash/"><i class='bx bxl-facebook'></i></a>
-        <a href="https://github.com/tishanrashmika"><i class='bx bxl-github'></i></a>
+      <div style="margin-top:30px;">
+        <a href="https://www.linkedin.com/in/tishan-rashmika/" style="color:#12f7ff; font-size:24px; margin-right:15px;"><i class='bx bxl-linkedin'></i></a>
+        <a href="https://www.instagram.com/tish_rash/" style="color:#12f7ff; font-size:24px; margin-right:15px;"><i class='bx bxl-instagram'></i></a>
+        <a href="https://wa.me/94716367106" style="color:#12f7ff; font-size:24px; margin-right:15px;"><i class='bx bxl-whatsapp'></i></a>
+        <a href="https://www.facebook.com/tishrash/" style="color:#12f7ff; font-size:24px; margin-right:15px;"><i class='bx bxl-facebook'></i></a>
+        <a href="https://github.com/tishanrashmika" style="color:#12f7ff; font-size:24px; margin-right:15px;"><i class='bx bxl-github'></i></a>
       </div>
     </div>
 
-    <div class="home-image scroll-scale">
-      <div class="img-box">
-        <img src="img/profile.png" alt="Profile" />
+    <!-- Right Image -->
+    <div style="position:relative; width:400px; margin-top:40px;">
+      <div style="z-index:2; position:relative;">
+        <img src="img/profile.png" alt="Profile" style="width:100%; border-radius:50%;" />
       </div>
 
-      <!-- Liquid Shape Animation -->
-      <div class="liquid-shape">
+      <!-- Animated SVG Shape -->
+      <div style="position:absolute; top:-50px; left:-50px; width:500px; height:500px; z-index:1;">
         <svg viewBox="0 0 500 500" xmlns="http://www.w3.org/2000/svg" width="100%">
           <path fill="#12f7ff">
             <animate attributeName="d" dur="20000ms" repeatCount="indefinite"
@@ -74,6 +61,7 @@
         </svg>
       </div>
     </div>
+
   </section>
 
     <!-- About section -->
